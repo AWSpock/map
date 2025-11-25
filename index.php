@@ -44,7 +44,7 @@ switch ($routeParser->ResourcePath()) {
     <link rel='stylesheet' type='text/css' href='//cdn.spockfamily.net/v2/css/filter.css' />
     <link rel='stylesheet' type='text/css' href='//cdn.spockfamily.net/v2/css/loading.css' />
 
-    <title>Mileage | Spockfamily</title>
+    <title>Map | Spockfamily</title>
 
     <link rel="icon" href="//cdn.spockfamily.net/img/icon.ico" type="image/x-icon">
 

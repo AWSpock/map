@@ -1,30 +1,22 @@
 .data-table-row {
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    "date odometer price"
-    "garage garage garage"
-    "description description updated";
-    row-gap: 1rem;
+    "name name"
+    "latitude longitude"
+    "update updated";
+  row-gap: 1rem;
 }
 
-.data-table-cell[data-id="date"] {
-  grid-area: date;
+.data-table-cell[data-id="name"] {
+  grid-area: name;
 }
 
-.data-table-cell[data-id="odometer"] {
-  grid-area: odometer;
+.data-table-cell[data-id="latitude"] {
+  grid-area: latitude;
 }
 
-.data-table-cell[data-id="price"] {
-  grid-area: price;
-}
-
-.data-table-cell[data-id="description"] {
-  grid-area: description;
-}
-
-.data-table-cell[data-id="garage"] {
-  grid-area: garage;
+.data-table-cell[data-id="longitude"] {
+  grid-area: longitude;
 }
 
 .data-table-cell[data-id="created"] {
@@ -35,27 +27,10 @@
   grid-area: updated;
 }
 
-@media only screen and (min-width: 768px) {}
-
-@media only screen and (min-width: 1024px) {
-  .data-table-row.header-row {
-    display: none;
-  }
-
-  .data-table-row:not(.header-row) .data-table-cell-label {
-    display: block;
-  }
-
-  .data-table-row {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
-      "date odometer price"
-      "garage garage garage"
-      "description description updated";
-  }
+@media only screen and (min-width: 768px) {
 }
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1024px) {
   .data-table-row.header-row {
     display: grid;
   }
@@ -65,9 +40,13 @@
   }
 
   .data-table-row {
-    grid-template-columns: 1fr 1fr 1fr 2fr 3fr 2fr;
-    grid-template-areas: "date odometer price garage description updated";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "name latitude longitude updated";
   }
 }
 
-@media only screen and (min-width: 1580px) {}
+@media only screen and (min-width: 1280px) {
+}
+
+@media only screen and (min-width: 1580px) {
+}

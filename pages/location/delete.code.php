@@ -13,7 +13,7 @@ if (!($recCategory->isOwner() || $recCategory->isManager())) {
 }
 
 $locationData = $data->locations($recCategory->id());
-$recLocation = $locationData->getRecordById($record_id);
+$recLocation = $locationData->getRecordById($location_id);
 if ($recLocation->id() < 0) {
     header('Location: /category/' . $recCategory->id() . '/location');
     die();

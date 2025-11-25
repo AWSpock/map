@@ -42,20 +42,14 @@ async function loadData() {
       );
 
       clone.querySelector(
-        '[data-id="date"] .data-table-cell-content'
-      ).textContent = i.date;
+        '[data-id="name"] .data-table-cell-content'
+      ).textContent = i.name;
       clone.querySelector(
-        '[data-id="odometer"] .data-table-cell-content'
-      ).textContent = i.odometer;
+        '[data-id="latitude"] .data-table-cell-content'
+      ).textContent = i.latitude;
       clone.querySelector(
-        '[data-id="price"] .data-table-cell-content'
-      ).textContent = i.price;
-      clone.querySelector(
-        '[data-id="description"] .data-table-cell-content'
-      ).innerHTML = i.description.replace("\r\n", "<br>");
-      clone.querySelector(
-        '[data-id="garage"] .data-table-cell-content'
-      ).textContent = i.garage;
+        '[data-id="longitude"] .data-table-cell-content'
+      ).textContent = i.longitude;
       // clone.querySelector(
       //   '[data-id="created"] .data-table-cell-content'
       // ).textContent = i.created;

@@ -13,35 +13,24 @@
 
 <div class="content">
     <form method="post" action="" id="frm" class="form-group main-form">
-        <div class="input-group date">
-            <label for="location.date" class="form-control">Date</label>
-            <input type="date" id="location.date" name="location.date" class="form-control" required="required" value="<?php echo htmlentities($recLocation->date()); ?>" />
+        <div class="input-group name">
+            <label for="location.name" class="form-control">Name</label>
+            <input type="text" id="location.name" name="location.name" class="form-control" required="required" value="<?php echo htmlentities($recLocation->name()); ?>" />
         </div>
-        <div class="input-group odometer">
-            <label for="location.odometer" class="form-control">Odometer</label>
-            <input type="number" id="location.odometer" name="location.odometer" class="form-control" required="required" value="<?php echo htmlentities($recLocation->odometer()); ?>" min="1" step="1" />
+        <div class="input-group latitude_longitude">
+            <label for="location.latitude_longitude" class="form-control">Latitude, Longitude</label>
+            <input type="text" id="location.latitude_longitude" name="location.latitude_longitude" class="form-control" required="required" value="<?php echo htmlentities($lat_lon); ?>" />
         </div>
-        <div class="input-group garage">
-            <label for="location.garage" class="form-control">Garage</label>
-            <input type="text" id="location.garage" name="location.garage" class="form-control" required="required" value="<?php echo htmlentities($recLocation->garage()); ?>" list="garage-list" />
-            <datalist id="garage-list">
-                <?php
-                foreach ($garages as $garage) {
-                ?>
-                    <option value="<?php echo htmlentities($garage); ?>"></option>
-                <?php
-                }
-                ?>
-            </datalist>
+        <!-- <div class="input-group latitude">
+            <label for="location.latitude" class="form-control">Latitude</label>
+            <input type="number" id="location.latitude" name="location.latitude" class="form-control" required="required" value="<?php //echo htmlentities($recLocation->latitude()); 
+                                                                                                                                    ?>" min="-90" max="90" step=".00000000000001" />
         </div>
-        <div class="input-group price">
-            <label for="location.price" class="form-control">Price</label>
-            <input type="number" id="location.price" name="location.price" class="form-control" required="required" value="<?php echo htmlentities($recLocation->price()); ?>" step=".01" min="0" />
-        </div>
-        <div class="input-group description">
-            <label for="location.description" class="form-control">Description</label>
-            <textarea id="location.description" name="location.description" class="form-control" required="required"><?php echo htmlentities($recLocation->description()); ?></textarea>
-        </div>
+        <div class="input-group longitude">
+            <label for="location.longitude" class="form-control">Longitude</label>
+            <input type="number" id="location.longitude" name="location.longitude" class="form-control" required="required" value="<?php //echo htmlentities($recLocation->longitude()); 
+                                                                                                                                    ?>" min="-180" max="180" step=".00000000000001" />
+        </div> -->
         <div class="button-group">
             <button type="submit" class="button primary"><i class="fa-solid fa-save"></i>Save</button>
             <a href="/category/<?php echo htmlentities($recCategory->id()); ?>/location" class="button secondary"><i class="fa-solid fa-ban"></i>Cancel</a>

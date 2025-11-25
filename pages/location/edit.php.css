@@ -1,37 +1,39 @@
 form.main-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-areas:
+    "name name"
+    "latitude longitude"
+    "buttons buttons"
+    "updated updated"
+    "created created"; */
     grid-template-areas:
-        "date odometer"
-        "garage garage"
-        "price price"
-        "description description"
-        "buttons buttons"
-        "updated created";
-    column-gap: 1rem;
+    "name name"
+    "latitude_longitude latitude_longitude"
+    "buttons buttons"
+    "updated updated"
+    "created created";
+  column-gap: 1rem;
 }
 
-.input-group.date {
-    grid-area: date;
+.input-group.name {
+  grid-area: name;
 }
-.input-group.odometer {
-    grid-area: odometer;
+.input-group.latitude_longitude {
+    grid-area: latitude_longitude;
 }
-.input-group.garage {
-    grid-area: garage;
+.input-group.latitude {
+  grid-area: latitude;
 }
-.input-group.price {
-    grid-area: price;
-}
-.input-group.description {
-    grid-area: description;
+.input-group.longitude {
+  grid-area: longitude;
 }
 .button-group {
-    grid-area: buttons;
+  grid-area: buttons;
 }
 .input-group.updated {
-    grid-area: updated;
+  grid-area: updated;
 }
 .input-group.created {
-    grid-area: created;
+  grid-area: created;
 }

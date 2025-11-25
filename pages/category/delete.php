@@ -19,50 +19,6 @@
             <label class="form-control">Name</label>
             <div><samp><?php echo htmlentities($recCategory->name()); ?></samp></div>
         </div>
-        <div class="input-group">
-            <label class="form-control">Make</label>
-            <div><samp><?php echo htmlentities($recCategory->make()); ?></samp></div>
-        </div>
-        <div class="input-group">
-            <label class="form-control">Model</label>
-            <div><samp><?php echo htmlentities($recCategory->model()); ?></samp></div>
-        </div>
-        <div class="input-group">
-            <label class="form-control">Year</label>
-            <div><samp><?php echo htmlentities($recCategory->year()); ?></samp></div>
-        </div>
-        <div class="input-group">
-            <label class="form-control">Color</label>
-            <div><samp><?php echo htmlentities($recCategory->color()); ?></samp></div>
-        </div>
-        <div class="input-group">
-            <label class="form-control">Tank Capacity</label>
-            <div><samp data-numberformatter><?php echo htmlentities($recCategory->tank_capacity()); ?></samp></div>
-        </div>
-        <div class="input-group">
-            <label class="form-control">Purchase Date</label>
-            <div><samp data-dateonlyformatter><?php echo htmlentities($recCategory->purchase_date()); ?></samp></div>
-        </div>
-        <div class="input-group">
-            <label class="form-control">Purchase Price</label>
-            <div><samp data-moneyformatter><?php echo htmlentities($recCategory->purchase_price()); ?></samp></div>
-        </div>
-        <div class="input-group">
-            <label class="form-control">Purchase Odometer</label>
-            <div><samp data-numberformatter><?php echo htmlentities($recCategory->purchase_odometer()); ?></samp></div>
-        </div>
-        <div class="input-group">
-            <label class="form-control">Sell Date</label>
-            <div><samp data-dateonlyformatter><?php echo htmlentities($recCategory->sell_date()); ?></samp></div>
-        </div>
-        <div class="input-group">
-            <label class="form-control">Sell Price</label>
-            <div><samp data-moneyformatter><?php echo htmlentities($recCategory->sell_price()); ?></samp></div>
-        </div>
-        <div class="input-group">
-            <label class="form-control">Sell Odometer</label>
-            <div><samp data-numberformatter><?php echo htmlentities($recCategory->sell_odometer()); ?></samp></div>
-        </div>
         <!--<div class="input-group">
             <label class="form-control">Bill Types</label>
             <div><samp><?php //echo htmlentities(count($recCategory->bill_types())); ?></samp></div>

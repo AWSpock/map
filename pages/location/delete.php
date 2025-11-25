@@ -7,7 +7,7 @@
         <li><a href="/">Vechiles</a></li>
         <li><a href="/category/<?php echo htmlentities($recCategory->id()); ?>/summary"><?php echo htmlentities($recCategory->name()); ?></a></li>
         <li><a href="/category/<?php echo htmlentities($recCategory->id()); ?>/location">Locations</a></li>
-        <li><a href="/category/<?php echo htmlentities($recCategory->id()); ?>/location/<?php echo htmlentities($recLocation->id()); ?>/edit">Edit: <span data-dateonlyformatter><?php echo htmlentities($recLocation->date()); ?></span> - <span data-numberformatter><?php echo htmlentities($recLocation->odometer()); ?></span></a></li>
+        <li><a href="/category/<?php echo htmlentities($recCategory->id()); ?>/location/<?php echo htmlentities($recLocation->id()); ?>/edit">Edit: <span><?php echo htmlentities($recLocation->name()); ?></span></a></li>
         <li>Delete</li>
     </ul>
 </nav>
@@ -17,24 +17,16 @@
         <input type="hidden" id="location.id" name="location.id" value="<?php echo htmlentities($recLocation->id()); ?>" />
         <p>Are you sure you wish to delete this Location?</p>
         <div class="input-group">
-            <label class="form-control">Date</label>
-            <div><samp><?php echo htmlentities($recLocation->date()); ?></samp></div>
+            <label class="form-control">Name</label>
+            <div><samp><?php echo htmlentities($recLocation->name()); ?></samp></div>
         </div>
         <div class="input-group">
-            <label class="form-control">Odometer</label>
-            <div><samp data-numberformatter><?php echo htmlentities($recLocation->odometer()); ?></samp></div>
+            <label class="form-control">Latitude</label>
+            <div><samp><?php echo htmlentities($recLocation->latitude()); ?></samp></div>
         </div>
         <div class="input-group">
-            <label class="form-control">Garage</label>
-            <div><samp><?php echo htmlentities($recLocation->garage()); ?></samp></div>
-        </div>
-        <div class="input-group">
-            <label class="form-control">Price</label>
-            <div><samp data-moneyformatter><?php echo htmlentities($recLocation->price()); ?></samp></div>
-        </div>
-        <div class="input-group">
-            <label class="form-control">Description</label>
-            <div><samp><?php echo htmlentities($recLocation->description()); ?></samp></div>
+            <label class="form-control">Longitude</label>
+            <div><samp><?php echo htmlentities($recLocation->longitude()); ?></samp></div>
         </div>
         <div class="input-group">
             <label class="form-control">Updated</label>

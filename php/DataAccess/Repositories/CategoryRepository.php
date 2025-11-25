@@ -146,7 +146,7 @@ class CategoryRepository
 
         $sql = "
             UPDATE category 
-            SET `name` = ?, 
+            SET `name` = ?
             WHERE `id` = ? 
             AND `userid` = ?
         ";
@@ -178,7 +178,7 @@ class CategoryRepository
         $this->db->beginTransaction();
 
         $sql = "
-            DELETE a, b, c, d, e
+            DELETE a, b, c, d
             FROM category a
                 LEFT OUTER JOIN category_favorite b ON a.`id` = b.`category_id`
                 LEFT OUTER JOIN category_share c ON a.`id` = b.`category_id`

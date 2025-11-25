@@ -1,3 +1,9 @@
+#map {
+  height: 500px;
+  width: 100%;
+  max-width: 800px;
+}
+
 form.inline {
   display: inline;
 }
@@ -73,7 +79,8 @@ button.link {
   row-gap: 1.5rem;
 }
 
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 768px) {
+}
 
 @media only screen and (min-width: 1024px) {
   .category-info {
@@ -97,6 +104,8 @@ button.link {
   }
 }
 
-@media only screen and (min-width: 1280px) {}
+@media only screen and (min-width: 1280px) {
+}
 
-@media only screen and (min-width: 1580px) {}
+@media only screen and (min-width: 1580px) {
+}

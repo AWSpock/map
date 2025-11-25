@@ -22,7 +22,7 @@ class LocationRepository
     {
         if (!array_key_exists($id, $this->records)) {
             $sql = "
-                SELECT a.`id`, a.`created`, a.`updated`, a.`date`, a.`odometer`, a.`price`, a.`description`, a.`garage`
+                SELECT a.`id`, a.`created`, a.`updated`, a.`name`, a.`latitude`, a.`longitude`
                 FROM location a
                 WHERE a.`category_id` = ?
                     AND a.`id` = ?
@@ -55,10 +55,10 @@ class LocationRepository
         }
 
         $sql = "
-            SELECT a.`id`, a.`created`, a.`updated`, a.`date`, a.`odometer`, a.`price`, a.`description`, a.`garage`
+            SELECT a.`id`, a.`created`, a.`updated`, a.`name`, a.`latitude`, a.`longitude`
             FROM location a
             WHERE a.`category_id` = ?
-            ORDER BY a.`date` DESC, a.`odometer` DESC
+            ORDER BY a.`name`
         ";
 
         $result = $this->db->query($sql, [
@@ -77,7 +77,7 @@ class LocationRepository
     {
         $this->actionDataMessage = "Failed to insert Location";
 
-        if (empty($rec->date()) || !is_int($rec->odometer()) || !is_float($rec->price()) || empty($rec->description())) {
+        if (empty($rec->name()) || !is_float($rec->latitude()) || !is_float($rec->longitude())) {
             $this->actionDataMessage = "Missing required fields to insert Location";
             return 0;
         }
@@ -85,18 +85,16 @@ class LocationRepository
         $this->db->beginTransaction();
 
         $sql = "
-            INSERT INTO location (`category_id`,`date`,`odometer`,`price`,`description`,`garage`)
-            VALUES (?,?,?,?,?,?)
+            INSERT INTO location (`category_id`,`name`,`latitude`,`longitude`)
+            VALUES (?,?,?,?)
         ";
 
         $result = $this->db->query($sql, [
             $this->category_id,
-            $rec->date(),
-            $rec->odometer(),
-            $rec->price(),
-            $rec->description(),
-            $rec->garage()
-        ], "isidss");
+            $rec->name(),
+            $rec->latitude(),
+            $rec->longitude()
+        ], "isdd");
 
         if (is_int($result) && $result > 0) {
             $this->actionDataMessage = "Location Inserted";
@@ -111,7 +109,7 @@ class LocationRepository
     {
         $this->actionDataMessage = "Failed to update Location";
 
-        if (empty($rec->date()) || !is_int($rec->odometer()) || !is_float($rec->price()) || empty($rec->description())) {
+        if (empty($rec->name()) || !is_float($rec->latitude()) || !is_float($rec->longitude())) {
             $this->actionDataMessage = "Missing required fields to update Location";
             return 0;
         }
@@ -120,24 +118,20 @@ class LocationRepository
 
         $sql = "
             UPDATE location
-            SET `date` = ?,
-                `odometer` = ?,
-                `price` = ?,
-                `description` = ?,
-                `garage` = ? 
+            SET `name` = ?,
+                `latitude` = ?,
+                `longitude` = ?
             WHERE `id` = ? 
             AND `category_id` = ?
         ";
 
         $result = $this->db->query($sql, [
-            $rec->date(),
-            $rec->odometer(),
-            $rec->price(),
-            $rec->description(),
-            $rec->garage(),
+            $rec->name(),
+            $rec->latitude(),
+            $rec->longitude(),
             $rec->id(),
             $this->category_id
-        ], "sidssii");
+        ], "sddii");
 
         if ($result !== false) {
             if ($result !== 1) {

@@ -17,13 +17,13 @@ if ($userAuth->checkToken()) {
         }
         ?>
         <li>
-            <a href="/category/<?php echo $category->id(); ?>/summary"><i class="fa-solid fa-car-side"></i><?php echo htmlentities($category->name()); ?></a>
+            <a href="/category/<?php echo $category->id(); ?>/summary"><i class="fa-solid fa-layer-group"></i><?php echo htmlentities($category->name()); ?></a>
         </li>
         <?php
             if (isset($category_id) && $category->id() == $category_id) {
             ?>
                 <!-- <ul> -->
-                    <li class="menu-sub"><a href="/category/<?php echo $category->id(); ?>/location"><i class="fa-solid fa-screwdriver-wrench"></i>Location</a></li>
+                    <li class="menu-sub"><a href="/category/<?php echo $category->id(); ?>/location"><i class="fa-solid fa-location-dot"></i>Locations</a></li>
                 <!-- </ul> -->
             <?php
             }
