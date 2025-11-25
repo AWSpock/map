@@ -1,0 +1,102 @@
+form.inline {
+  display: inline;
+}
+
+button.link {
+  padding: 0.5rem 0.75rem;
+}
+
+.options {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.options a:not(.button) {
+  padding: 1rem;
+}
+
+.category-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--secondary-background-color);
+  border-radius: 0.4rem;
+}
+
+.category-purchase,
+.category-sell {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--secondary-background-color);
+  border-radius: 0.4rem;
+}
+
+.category-info .info,
+.category-purchase .info,
+.category-sell .info {
+  padding: 1rem;
+  display: grid;
+  justify-items: center;
+}
+
+.category-purchase .info.date,
+.category-sell .info.date {
+  grid-column: 1 / 3;
+}
+
+.fillup-stats {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.fillup-stats .stats {
+  padding: 0 1rem 1rem 1rem;
+  border: 1px solid var(--secondary-background-color);
+  border-radius: 0.4rem;
+}
+
+.mileperday-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.mileperday-stats .info {
+  display: grid;
+  justify-items: center;
+}
+
+.gauges {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1.5rem;
+  row-gap: 1.5rem;
+}
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 1024px) {
+  .category-info {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .category-purchase,
+  .category-sell {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .category-purchase .info.date,
+  .category-sell .info.date {
+    grid-column: unset;
+  }
+
+  .fillup-stats {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+    row-gap: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1280px) {}
+
+@media only screen and (min-width: 1580px) {}
