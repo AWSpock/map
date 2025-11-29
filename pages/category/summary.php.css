@@ -5,7 +5,8 @@
 }
 
 form.inline {
-  display: inline;
+  /* display: inline; */
+  margin-bottom: 0;
 }
 
 button.link {
@@ -15,10 +16,24 @@ button.link {
 .options {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-flow: column;
+  column-gap: 1rem;
+  place-content: start;
 }
 
 .options a:not(.button) {
   padding: 1rem;
+}
+
+.options>* {
+  text-align: center;
+  display: grid;
+}
+
+.options>*>i {
+  place-self: center;
 }
 
 .category-info {
@@ -79,8 +94,7 @@ button.link {
   row-gap: 1.5rem;
 }
 
-@media only screen and (min-width: 768px) {
-}
+@media only screen and (min-width: 768px) {}
 
 @media only screen and (min-width: 1024px) {
   .category-info {
@@ -104,8 +118,6 @@ button.link {
   }
 }
 
-@media only screen and (min-width: 1280px) {
-}
+@media only screen and (min-width: 1280px) {}
 
-@media only screen and (min-width: 1580px) {
-}
+@media only screen and (min-width: 1580px) {}
